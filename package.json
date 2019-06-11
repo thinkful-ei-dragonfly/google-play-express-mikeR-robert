@@ -1,0 +1,29 @@
+{
+  "name": "google-play-express-miker-robert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debug": "ndb app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkful-ei-dragonfly/google-play-express-mikeR-robert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinkful-ei-dragonfly/google-play-express-mikeR-robert/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei-dragonfly/google-play-express-mikeR-robert#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "ndb": "^1.0.45",
+    "nodemon": "^1.19.1"
+  }
+}

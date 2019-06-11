@@ -3,7 +3,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const playstore = require("./playstore");
+let playstore = require("./playstore");
 
 const app = express();
 
@@ -37,12 +37,21 @@ app.get("/apps", (req, res) => {
     }
   }
 
+  let arrPlaystore;
   // If present the value must be one of the list otherwise an error 
   // is returned. Filter the list by the given value.
-
+  if (genres) {
+    if ( ['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card' ].includes(genres) ) {
+      playstore = playstore.filter(application => {
+        return application.Genres.includes(genres);
+      });
+    } else {
+      res.status(400).send('please enter a valid genre');
+    }
+  }
   // console.log()
 
-  const arrPlaystore = JSON.stringify(playstore);
+  arrPlaystore = JSON.stringify(playstore);
 
   // const arrPlaystore = playstore.json();
 
